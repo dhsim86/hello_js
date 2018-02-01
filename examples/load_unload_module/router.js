@@ -1,5 +1,6 @@
 let multiparty = require('multiparty');
 let fs = require('fs');
+let heapdump = require('heapdump');
 
 let executor = require('./executor');
 
@@ -65,7 +66,7 @@ module.exports = function(app) {
 
   app.get('/module/exec', function (req, res, next) {
     executor.execute(executor.userCodeDirPath + '/' + moduleName);
-    res.status(200).send('execution complete');
+    res.status(200).send('executing module complete.');
   });
 
   app.get('/module', function (req, res, next) {
@@ -74,6 +75,17 @@ module.exports = function(app) {
 
   app.get('/module/unload', function (req, res, next) {
     executor.unload(executor.userCodeDirPath + '/' + req.query.name);
-    res.status(200).send("unload module complete");
+    res.status(200).send("unloading module complete.");
+  });
+
+  app.get('/gc', function (res, res, next) {
+    global.gc();
+    res.status(200).send("garbage collection has been executed.");
+  });
+
+  app.get('/heapdump', function (req, res, next) {
+    var heapDumpName = '/tmp/heapdump' + Date.now() + '.heapsnapshot';
+    heapdump.writeSnapshot(heapDumpName);
+    res.status(200).send('Heapdump has been generated in ' + heapDumpName);
   });
 }
