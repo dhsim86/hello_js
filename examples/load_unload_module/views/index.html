@@ -8,28 +8,21 @@
 
   <body>
       <div>
-        <form action="/user-code" method="post" enctype="multipart/form-data">
+        <form action="/module" method="post" enctype="multipart/form-data">
           <input type="file" name="user_code">
           <button type="submit">upload</button>
         </form>
       </div>
 
       <div>
-        <form action="/user-code-delete" method="get">
+        <form action="/module/unload" method="get">
           <input type="text" name="name">
           <button type="submit">unload</button>
         </form>
       </div>
 
       <div>
-        <form action="/user-code-delete-using-decache" method="get">
-          <input type="text" name="name">
-          <button type="submit">decache</button>
-        </form>
-      </div>
-
-      <div>
-          <input type="button" value="check" onclick="location.href='/check-module';" />
+          <input type="button" value="check" onclick="location.href='/module';" />
       </div>
   </body>
 </html>
