@@ -7,9 +7,18 @@
   </head>
 
   <body>
-      <form action="/user-code" method="post" enctype="multipart/form-data">
-        <input type="file" name="user_code">
-        <button type="submit">upload</button>
-      </form>
+      <div>
+        <form action="/user-code" method="post" enctype="multipart/form-data">
+          <input type="file" name="user_code">
+          <button type="submit">upload</button>
+        </form>
+      </div>
+
+      <div>
+        <form action="/user-code-delete" method="get">
+          <input type="text" name="name">
+          <button type="submit">unload</button>
+        </form>
+      </div>
   </body>
 </html>

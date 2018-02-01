@@ -48,6 +48,46 @@ function executeUserCode(filePath) {
   proxy.userDefinedMethod("arg1", 1, 2.5, { value: "jsonTest" });
 }
 
+function deleteModule(moduleName) {
+  let solvedName = require.resolve(moduleName);
+  let nodeModule = require.cache[solvedName];
+
+  if (nodeModule) {
+
+    for (let i = 0; i < nodeModule.children.length; i++) {
+      let child = nodeModule.children[i];
+      deleteModule(child.filename)
+    }
+    delete require.cache[solvedName];
+  }
+}
+
+function searchCache(moduleName, callback) {
+  let mod = require.resolve(moduleName);
+
+  if (mod && ((mod = require.cache[mod]) !== undefined)) {
+    (function traverse (mod) {
+      mod.children.forEach(function (child) {
+        traverse(child);
+      });
+      callback(mod);
+    }(mod));
+  }
+}
+
+function purgeCache(moduleName) {
+  searchCache(moduleName, function(mod) {
+    delete require.cache[mod.id];
+  });
+
+  Object.keys(module.constructor._pathCache).forEach(function (cacheKey) {
+    console.log(cacheKey);
+    if (cacheKey.indexOf(moduleName) > 0) {
+      delete module.constructor._pathCache[cacheKey];
+    }
+  });
+}
+
 module.exports = function(app)
 {
   let userDirPath = './user_codes'
@@ -106,5 +146,10 @@ module.exports = function(app)
     });*/
     
     form.parse(req);
+  });
+
+  app.get('/user-code-delete', function (req, res, next) {
+    purgeCache(userDirPath + '/' + req.query.name);
+    res.status(200).send("unload module complete");
   });
 }
