@@ -1,5 +1,6 @@
 let multiparty = require('multiparty');
 let fs = require('fs');
+let decache = require('decache');
 
 function checkUserCodeDir(path) {
   if (fs.existsSync(path) === false) {
@@ -148,8 +149,18 @@ module.exports = function(app)
     form.parse(req);
   });
 
+  app.get('/check-module', function (req, res, next) {
+    console.log(module.children);
+    res.status(200).send("unload module complete");
+  });
+
   app.get('/user-code-delete', function (req, res, next) {
     purgeCache(userDirPath + '/' + req.query.name);
     res.status(200).send("unload module complete");
+  });
+
+  app.get('/user-code-delete-using-decache', function (req, res, next) {
+    decache(userDirPath + '/' + req.query.name);
+    res.status(200).send("decache module complete");
   });
 }
