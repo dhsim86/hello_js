@@ -1,0 +1,18 @@
+{
+  "name": "resolve_modules",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack --config webpack.config.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jquery": "^3.3.1",
+    "webpack": "~3.11.0",
+    "webpack-cli": "^2.0.9"
+  }
+}
