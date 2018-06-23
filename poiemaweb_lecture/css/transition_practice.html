@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    div {
+      margin: 10px;
+    }
+    .ex1 div {
+      width: 100px;
+      height: 100px;
+      background: red;
+      transition: all 2s;
+    }
+    .ex1 div:hover {
+      border-radius: 50%;
+      background: blue;
+    }
+    .ex2 div {
+      width: 100px;
+      height: 50px;
+      background-color: red;
+      margin-bottom: 10px;
+      transition-property: width, background-color;
+      transition-duration: 2s, 2s;
+    }
+    .ex2 div:hover {
+      width: 300px;
+      background-color: blue;
+    }
+  </style>
+</head>
+<body>
+  <section class="ex1">
+    <div></div>
+  </section>
+  <section class="ex2">
+    <div></div>
+  </section>
+</body>
+</html>
