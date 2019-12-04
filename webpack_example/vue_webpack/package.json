@@ -1,5 +1,5 @@
 {
-  "name": "babel7_test",
+  "name": "vue_webpack_example",
   "version": "1.0.0",
   "description": "",
   "main": "apps/index.js",
