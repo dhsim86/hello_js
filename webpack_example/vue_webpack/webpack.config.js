@@ -2,6 +2,7 @@ const path = require('path')
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 
 cwd = file => {
   return path.join(process.cwd(), file || '')
@@ -59,6 +60,7 @@ module.exports = {
       template: path.resolve(__dirname, 'index.html'),
       filename: path.join(__dirname, '../dist/index.html')
     }),
+    new BundleAnalyzerPlugin(),
     new webpack.HotModuleReplacementPlugin()
   ]
 }
