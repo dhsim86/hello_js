@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            /* anchor 중 href attribute를 가지는 모든 요소 */
+            a[href] {
+                color: red;
+            }
+            /* anchor 중 target attribute 값이 "_blank" 인 요소 */
+            a[target="_blank"] {
+                font-size: 200%;
+            }
+            /* h1 요소 중에 title attribute 값에 "first"를 단어로 (공백으로 분리된) 포함하는 요소 */
+            h1[title~="first"] {
+                color: red;
+            }
+            /* p 요소 중에 lang attribute 값이 "en"과 일치하거나 "en-"으로 시작하는 요소  */
+            p[lang|="en"] {
+                color: red;
+            }
+            /* anchor 중에 href attribute 값이 "https://"로 시작하는 요소 */
+            a[href^="https://"] {
+                color: blue;
+            }
+            /* anchor 중에 href attribute 값이 "html"로 끝나는 요소 */
+            a[href$="html"] {
+                color: green;
+            }
+            /* div 요소 중 class attribute 값에 "test"를 포함하는 요소 */
+            div[class*="test"] {
+                color: red;
+            }
+            /* div 요소 중 class attribute 값에 "test" 라는 단어를 (공백으로 분리된) 포함하는 요소 */
+            div[class~="test"] {
+                background-color: yellow;
+            }
+        </style>
+    </head>
+    <body>
+        <a href="http://www.poiemaweb.com">poiemaweb.com</a><br>
+        <a href="http://www.google.com" target="_blank">google.com</a><br>
+        <a href="http://www.naver.com" target="_top">naver.com</a><br>
+
+        <hr>
+
+        <h1 title="heading first">Heading first</h1>
+        <h1 title="heading-first">Heading-first</h1>
+        <h1 title="heading second">Heading second</h1>
+        <h1 title="heading third">Heading third</h1>
+
+        <hr>
+
+        <p lang="en">Hello!</p>
+        <p lang="en-us">Hi!</p>
+        <p lang="en-gb">Ello!</p>
+        <p lang="us">Hi!</p>
+        <p lang="no">Hei!</p>
+
+        <hr>
+
+        <a href="https://www.test.com">https://www.test.com</a><br>
+        <a href="http://www.test.com">http://www.test.com</a>
+
+        <hr>
+        
+        <a href="test.html">test.html</a>
+        <a href="test.jsp">test.jsp</a>
+
+        <hr>
+        <div class="first_test">The first div element.</div>
+        <div class="second">The second div element.</div>
+        <div class="test">The third div element</div>
+        <p class="test">This is some text in a paragraph.</p>
+    </body>
+</html>

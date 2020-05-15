@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            /* div 요소의 후손 요소 중 p 요소 */
+            article[class~="combinator"] div p {
+                color: red;
+            }
+            /* div 요소의 자식 요소 (1 level 후손) 중 p 요소 */
+            article[class~="child"] div > p {
+                color: red;
+            }
+
+            /* sibling combinator */
+            /* p 요소의 형제 요소 중, p 요소 바로 뒤의 ul 요소를 선택 */
+            article[class~="adjacent_sibling"] p + ul {
+                color: red;
+            }
+            /* p 요소의 형제 요소 중, p 요소 뒤의 모든 ul 요소를 선택 */
+            article[class~="general_sibling"] p ~ ul {
+                color: red;
+            }
+        </style>
+    </head>
+    <body>
+        <article class="combinator">
+            <h1>combinator</h1>
+            <div>
+                <p>paragraph 1</p>
+                <p>paragraph 2</p>
+                <span><p>paragraph 3</p></span>
+            </div>
+            <p>paragraph 4</p>
+        </article>
+
+        <hr>
+
+        <article class="child">
+            <h1>child</h1>
+            <div>
+                <p>paragraph 1</p>
+                <p>paragraph 2</p>
+                <span><p>paragraph 3</p></span>
+            </div>
+            <p>paragraph 4</p>
+        </article>
+
+        <hr>
+
+        <article class="adjacent_sibling">
+            <h1>adjacent_sibling</h1>
+            <div> a div element</div>
+            <ul>
+                <li>Coffee</li>
+                <li>Tea</li>
+                <li>Milk</li>
+            </ul>
+            <p>The first paragraph</p>
+            <ul>
+                <li>Coffee</li>
+                <li>Tea</li>
+                <li>Milk</li>
+            </ul>
+            <div>Another list</div>
+            <ul>
+                <li>Coffee</li>
+                <li>Tea</li>
+                <li>Milk</li>
+            </ul>
+        </article>
+
+        <article class="general_sibling">
+            <h1>general_sibling</h1>
+            <div> a div element</div>
+            <ul>
+                <li>Coffee</li>
+                <li>Tea</li>
+                <li>Milk</li>
+            </ul>
+            <p>The first paragraph</p>
+            <ul>
+                <li>Coffee</li>
+                <li>Tea</li>
+                <li>Milk</li>
+            </ul>
+            <div>Another list</div>
+            <ul>
+                <li>Coffee</li>
+                <li>Tea</li>
+                <li>Milk</li>
+            </ul>
+        </article>
+    </body>
+</html>

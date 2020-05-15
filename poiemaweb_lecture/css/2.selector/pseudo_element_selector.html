@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            p::first-letter {
+                font-size: 3em;
+            }
+            p::first-line {
+                color:red
+            }
+
+            h1::before {
+                content: " HTML!!! ";
+                color: blue;
+            }
+            h1::after {
+                content: " CSS3!!! ";
+                color: red;
+            }
+
+            ::selection {
+                color: red;
+                background-color: yellow;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>This is a heading</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo illum sunt distinctio sed, tempore, repellat rerum et ea laborum voluptatum! Quisquam error fugiat debitis maiores officiis, tenetur ullam amet in!</p>
+    </body>
+</html>

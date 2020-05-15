@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            /* anchor가 hover 상태일 때 */
+            article[class~="basic"] a:hover {
+                color:red;
+            }
+            /* input 요소가 focus 상태일 때 */
+            article[class~="basic"] input:focus {
+                background-color: yellow;
+            }
+
+            /* link pseudo class selector */
+            /* 방문하지 않은 anchor */
+            a:link {
+                color: orange;
+            }
+            /* 방문한 anchor */
+            a:visited {
+                color: green;
+            }
+            /* anchor가 클릭된 상태 */
+            a:active {
+                color: blue;
+            }
+
+            /* text input 과 password에 포커스가 들어올 경우 */
+            input[type=text]:focus,
+            input[type=password]:focus {
+                color: red;
+            }
+
+        </style>
+    </head>
+    <body>
+        <article class="basic">
+            <a href="#">Hover me</a><br><br>
+            <input type="text" placeholder="focus me">
+        </article>
+
+        <hr>
+        <a href="#" target="_blank">This is a link</a><br>
+        <input type="text" value="I'll be red when focused"><br>
+        <input type="password" value="I'll be red when focused"><br>
+    </body>
+</html>
