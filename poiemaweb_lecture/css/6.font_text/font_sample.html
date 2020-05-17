@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            section[class~="font-size"] .font-size-40 {
+                font-size: 40px;
+            }
+            section[class~="font-size"] .font-size-2x {
+                font-size: 2.0em;
+            }
+            section[class~="font-size"] .font-size-150ps {
+                font-size: 150%;
+            }
+            section[class~="font-size"] .font-size-large {
+                font-size: large;
+            }
+
+            section[class="font-family"] .serif {
+                font-family: "Times New Roman", Times, serif;
+            }
+            section[class="font-family"] .sans-serif {
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            section[class="font-family"] .monospace {
+                font-family: "Courier New", Courier, monospace;
+            }
+        </style>
+    </head>
+    <body>
+        <section class="font-size">
+            <p>default font size: 16px</p>
+            <p class="font-size-40">font-size: 40px</p>
+            <p class="font-size-2x">font-size: 2.0em</p>
+            <p class="font-size-150ps">font-size: 150%</p>
+            <p class="font-size-large">font-size: large</p>
+        </section>
+
+        <hr>
+
+        <section class="font-family">
+            <h1>font-family</h1>
+            <p class="serif">Times New Roman font.</p>
+            <p class="sans-serif">Arial font.</p>
+            <p class="monospace">Courier New font.</p>
+        </section>
+    </body>
+</html>
