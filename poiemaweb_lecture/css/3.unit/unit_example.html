@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body {
+                text-align: center;
+            }
+            section[class~="sample1"] div {
+                font-size: 14px;
+                font-weight: bold;
+                padding: 2em;
+                background-color: rgba(255, 0, 0, 0.2);
+            }
+
+            section[class~="sample2"] {
+                font-size: 14px; /* inherit */
+            }
+            section[class~="sample2"] div {
+                font-size: 120%;    /* 14px * 1.2 = 16.8px */
+                font-weight: bold;
+                padding: 2em;       /* 16.8px * 2 = 33.6px */
+                background-color: rgba(0, 255, 0, 0.2)
+            }
+
+            section[class~="sample3"] {
+                font-size: 14px;
+                text-align: center;
+            }
+            section[class~="sample3"] div {
+                font-size: 1.2em;
+                font-weight: bold;
+                padding: 2em;
+                background-color: rgba(0, 0, 255, 0.2);
+            }
+
+            section[class~="sample4"] {
+                font-size: 14px;
+            }
+            section[class~="sample4"] div {
+                font-size: 1.2em;
+                font-weight: bold;
+                padding: 2em;
+            }
+            section[class~="sample4"] .box1 {
+                background-color: rgba(255, 0, 0, 0.2);
+            }
+            section[class~="sample4"] .box2 {
+                background-color: rgba(255, 0, 0, 0.6);
+            }
+            section[class~="sample4"] .box3 {
+                background-color: rgba(255, 0, 0, 0.8);
+            }
+
+
+            section[class~="sample5"] {
+                font-size: 14px;
+            }
+            section[class~="sample5"] div {
+                font-size: 1.2rem;
+                font-weight: bold;
+                padding: 2em;
+            }
+            section[class~="sample5"] .box1 {
+                background-color: rgba(0, 255, 0, 0.2);
+            }
+            section[class~="sample5"] .box2 {
+                background-color: rgba(0, 255, 0, 0.6);
+            }
+            section[class~="sample5"] .box3 {
+                background-color: rgba(0, 255, 0, 0.8);
+            }
+        </style>
+    </head>
+    <body>
+        <section class="sample1">
+            <div>Font size: 14px</div>
+        </section>
+
+        <section class="sample2">
+            <div>Font size: 14px * 120% -> 16.8px</div>
+        </section>
+
+        <section class="sample3">
+            <div>Font size: 1.2em -> 14px * 1.2 = 16.8px</div>
+        </section>
+
+        <section class="sample4">
+            <div class="box1">
+                Font-size: 1.2em => 14px * 1.2 = 16.8px
+                <div class="box2">
+                    Font-size: 1.2em => 16.8px * 1.2 = 20.16px
+                    <div class="box3">
+                        Font-size: 1.2em => 20.16px * 1.2 = 24.192px
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="sample5">
+            <div class="box1">
+                <!-- HTML default font-size: 16px -->
+                Font-size: 1.2rem => 16px * 1.2 = 19.2px
+                <div class="box2">
+                    Font-size: 1.2rem => 16px * 1.2 = 19.2px
+                    <div class="box3">
+                        Font-size: 1.2rem => 16px * 1.2 = 19.2px
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>
