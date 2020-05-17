@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            section[class~="block_sample"] div:nth-of-type(1) {
+                background-color: #FFA07A;
+                padding: 20px;
+            }
+            section[class~="block_sample"] div:nth-of-type(2) {
+                background-color: #FF7F50;
+                padding: 20px;
+                width: 300px;
+            }
+            section[class~="inline_sample"] span {
+                background-color: red;
+                padding: 10px;
+                border: 1px solid yellow;
+                margin: 50px 50px; /* only margin-left, margin-right */
+            }
+
+            section[class="inline_block_sample"] .wrapper{
+                font-size: 0px;
+            }
+            section[class="inline_block_sample"] .inline-block {
+                display: inline-block;
+                border: 3px solid #73AD21;
+                vertical-align: middle;
+                font-size: 16px;
+            }
+            section[class="inline_block_sample"] .box1 {
+                width: 300px;
+                height: 70px;
+            }
+            section[class="inline_block_sample"] .box2 {
+                width: 300px;
+                height: 150px;
+            }
+        </style>
+    </head>
+    <body>
+        <section class="block_sample">
+            <div>
+                <h2>Block Level</h2>
+                <p>width, height 미지정 -> width: 100px; height: auto;</p>
+            </div>
+            <div>
+                <h2>Block Level</h2>
+                <p>with: 300px -> width: 300px; height: auto;</p>
+            </div>
+        </section>
+
+        <hr>
+
+        <section class="inline_sample">
+            <h1>My <span>Important</span> Heading</h1>
+            <span>Inline</span>
+            <span>Inline</span><span>Inline</span>
+        </section>
+
+        <hr>
+
+        <section class="inline_block_sample">
+            <div class="inline-block box1">
+                inline-block height 70px
+            </div>
+            <div class="inline-block box2">
+                inline-block height 150px
+            </div>
+
+            <div class="wrapper">
+                <div class="inline-block box1">
+                    inline-block height 70px
+                </div>
+                <div class="inline-block box2">
+                    inline-block height 150px
+                </div>
+            </div>
+        </section>
+    </body>
+</html>
