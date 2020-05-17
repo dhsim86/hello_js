@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            section[class~="sample1"] div {
+                color: black;
+                background-color: lightgray;
+                width: 300px;
+                padding: 25px;
+                border: 25px solid navy;
+                margin: 25px;
+            }
+            section[class~="sample2"] div {
+                color: black;
+                background-color: lightgray;
+                width: 300px;
+                padding: 25px;
+                border: 25px solid navy;
+                margin: 25px;
+                box-sizing: border-box;
+            }
+            section[class~="sample3"] div {
+                color: black;
+                background-color: cornsilk;
+                width: 300px;
+                height: 100px;
+                padding: 10px;
+                margin: 10px;
+                border: 5px solid navy;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- default width is 100%, height is content size of "block" elements-->
+        <div style="background-color: beige;">
+            test
+        </div>
+        <h2>Box Model</h2>
+        <section class="sample1">
+            <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+        </section>
+        <section class="sample2">
+            <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+        </section>
+        <section class="sample3">
+            <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+        </section>
+    </body>
+</html>
