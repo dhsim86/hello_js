@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .container {
+                border-radius: 5px;
+                background-color: cadetblue;
+                height: 50px;
+            }
+
+            .container > div {
+                width: 200px;
+                border-radius: 5px;
+                background-color: chocolate;
+            }
+
+            section[class~="text-align"] .container {
+                text-align: center;
+            }
+
+            section[class~="text-align-flex"] .container {
+                display: flex;
+                justify-content: center;
+            }
+
+        </style>
+    </head>
+    <body>
+        <section class="text-align">
+            <div class="container">
+                <div style="display: inline-block;">
+                    test 1
+                </div>
+                <div style="display: inline-block;">
+                    test 2
+                </div>
+            </div>
+        </section>
+
+        <hr>
+
+        <section class="text-align-flex">
+            <div class="container">
+                <div style="display: inline-block;">
+                    test 1
+                </div>
+                <div style="display: inline-block;">
+                    test 2
+                </div>
+            </div>
+        </section>
+
+        <hr>
+    </body>
+</html>
