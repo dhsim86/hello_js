@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <style>
+    .row { margin-bottom: 10px; }
+    [class|="col"] {
+      background: #2db34a;
+      border: 1px solid #eaeaed;
+      height: 50px;
+      font-size: .8em;
+      line-height: 50px;
+      text-align: center;
+      color: white;
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+  <div class="container-fluid">
+    <p>viewport width가 768px 이상(768px ~)일 때 .col-sm-* class는 적용된다. 768px 미만일 때는 media query에 의해 .col-sm-* class가 적용되지 않고 div 요소의 block 특성에 의해 100%의 너비를 가지며 수직으로 쌓이게 된다.</p>
+    <div class="row">
+      <div class="col-sm-1">sm-1</div>
+      <div class="col-sm-1">sm-1</div>
+      <div class="col-sm-1">sm-1</div>
+      <div class="col-sm-1">sm-1</div>
+      <div class="col-sm-1">sm-1</div>
+      <div class="col-sm-1">sm-1</div>
+      <div class="col-sm-1">sm-1</div>
+      <div class="col-sm-1">sm-1</div>
+      <div class="col-sm-1">sm-1</div>
+      <div class="col-sm-1">sm-1</div>
+      <div class="col-sm-1">sm-1</div>
+      <div class="col-sm-1">sm-1</div>
+    </div>
+    <div class="row">
+      <div class="col-sm-8">sm-8</div>
+      <div class="col-sm-4">sm-4</div>
+    </div>
+    <div class="row">
+      <div class="col-sm-5">sm-5</div>
+      <div class="col-sm-5">sm-5</div>
+    </div>
+    <div class="row">
+      <div class="col-sm-5">sm-5</div>
+      <div class="col-sm-5">sm-5</div>
+      <div class="col-sm-4">sm-4</div>
+    </div>
+  </div>
+</body>
+</html>
