@@ -39,9 +39,10 @@ console.log(child instanceof Child);  // true
 
 console.log('-----------------------')
 
+Child.__proto__ = Super;
 Child.prototype.constructor = Child;
 
-console.log(Child.__proto__);           // [Function]
+console.log(Child.__proto__);           // [Function: Super]
 console.log(Child.prototype.__proto__); // Super { print: [Function] }
 console.log(Child.prototype.constructor); // [Function: Child]
 console.log(Child.prototype.__proto__.constructor)  // [Function: Super]
