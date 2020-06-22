@@ -1,5 +1,6 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
     // entry file
@@ -11,7 +12,12 @@ module.exports = {
         filename: 'js/bundle.js'
     },
     plugins: [
-        new MiniCssExtractPlugin({ filename: 'css/style.css '})
+        new MiniCssExtractPlugin({ filename: 'css/style.css '}),
+        new HtmlWebpackPlugin({
+            title: '',
+            template: path.resolve(__dirname, 'index.html'),
+            filename: path.join(__dirname, 'dist/index.html')
+          }),
     ],
     module: {
         rules: [
@@ -42,5 +48,23 @@ module.exports = {
         ]
     },
     devtool: 'source-map',
-    mode: 'development'
+    mode: 'development',
+    devServer: {
+        contentBase: path.join(__dirname, "dist"),
+        hot: true,
+        overlay: true,
+        publicPath: '/',
+        port: 4000,
+        historyApiFallback: true,
+        before: (app, server, compiler) => {
+            app.get('/api/keywords', (req, res) => {
+                res.json([
+                    { keyword: 'italiy' },
+                    { keyword: 'cook' },
+                    { keyword: 'season' },
+                    { keyword: 'home party'}
+                ])
+            })
+        }
+    }
 }

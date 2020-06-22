@@ -1,4 +1,5 @@
 import { pi, power, Foo } from './lib'
+import './app'
 
 console.log(pi);
 console.log(power(pi, pi));
